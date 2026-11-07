@@ -1,0 +1,17 @@
+[package]
+name = "ghostto_cli"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+repository.workspace = true
+
+[[bin]]
+name = "ghostto"
+path = "src/main.rs"
+
+[dependencies]
+ghostto_http = { path = "../ghostto_http" }
+tokio.workspace = true
+tracing.workspace = true
+tracing-subscriber.workspace = true
