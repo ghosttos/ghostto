@@ -192,7 +192,7 @@ The project is developed in milestones, each gated by a concrete test:
 | M6 | SMP: 2 vCPUs via SharedArrayBuffer + atomics | nproc returns 2
 | M7 | Interpreter optimization: inline TLB, lazy | EFLAGS MIPS vs M5 baseline measured
 | M8 | Optional tiered Wasm JIT (measurement-gated) | Speedup proven against M7
-| M9 Legacy Windows / classic Mac OS | Separate platform work
+| M9 | Legacy Windows / classic Mac OS | Separate platform work
 
 ---
 
