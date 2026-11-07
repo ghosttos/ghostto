@@ -1,0 +1,22 @@
+name: Publish to npm (OIDC)
+on:
+  workflow_dispatch:
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      id-token: write
+    steps:
+      - uses: actions/checkout@v6
+      - uses: dtolnay/rust-toolchain@stable
+        with:
+          targets: wasm32-unknown-unknown
+      - name: Install wasm-pack
+        run: cargo install wasm-pack
+      - name: Build wasm package
+        run: wasm-pack build ghostto_web --scope ghosttos --target web
+      - name: Publish to npm
+        run: npm publish --access public
+        working-directory: ghostto_web/pkg
