@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ghostto</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>ghostto</h1>
+    <span id="status" data-state="off">off</span>
+  </header>
+
+  <main>
+    <div id="screen" class="screen" data-mode="fit">
+      <canvas id="canvas" width="720" height="1280"></canvas>
+    </div>
+
+    <aside id="controls">
+      <label>scale mode
+        <select id="mode">
+          <option value="fit">fit</option>
+          <option value="fill">fill</option>
+          <option value="stretch">stretch</option>
+        </select>
+      </label>
+      <button id="boot" disabled>boot</button>
+      <button id="pause" disabled>pause</button>
+      <button id="snapshot" disabled>snapshot</button>
+    </aside>
+  </main>
+
+  <footer>
+    <span id="log">connecting…</span>
+  </footer>
+
+  <script type="module" src="app.js"></script>
+</body>
+</html>
