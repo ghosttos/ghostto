@@ -1,0 +1,30 @@
+name: Publish Placeholder to npm
+on:
+  workflow_dispatch:
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22.x'
+          registry-url: 'https://registry.npmjs.org'
+      # Use a temporary directory to avoid publishing real source files
+      - name: Create placeholder package
+        run: |
+          mkdir placeholder-pkg && cd placeholder-pkg
+          cat > package.json <<'JSON'
+          {
+            "name": "@ghostto/engine",
+            "version": "0.0.0",
+            "description": "Placeholder reservation for ghostto engine",
+            "publishConfig": { "access": "public" }
+          }
+          JSON
+      - name: Publish placeholder
+        run: npm publish --access public
+        working-directory: placeholder-pkg
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
