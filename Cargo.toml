@@ -1,13 +1,31 @@
 [workspace]
-exclude = ["ghostto_web"]
+resolver = "2"
+members = [
+    "crates/ghostto",
+    "crates/ghostto_cli",
+    "crates/ghostto_http",
+    "crates/ghostto_ws",
+    "crates/ghostto_proto",
+]
 
-[package]
-name = "ghostto"
-version = "0.0.1"
+[workspace.package]
+version = "0.0.0"
 edition = "2021"
-license = "MIT OR Apache-2.0"
-description = "Placeholder reservation for the ghostto multi-OS browser emulator engine."
+rust-version = "1.80"
+license = "GPL-3.0-or-later"
 repository = "https://github.com/ghosttos/ghostto"
-publish = true
+authors = ["ghostto contributors"]
 
-[dependencies]
+[workspace.lints.rust]
+unsafe_code = "deny"
+missing_docs = "warn"
+
+[workspace.dependencies]
+tokio = { version = "1", features = ["rt-multi-thread", "macros", "net", "signal"] }
+axum = { version = "0.7", features = ["ws"] }
+tower-http = { version = "0.5", features = ["fs", "trace"] }
+futures = "0.3"
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+tracing = "0.1"
+tracing-subscriber = { version = "0.3", features = ["env-filter"] }
