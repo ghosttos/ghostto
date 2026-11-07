@@ -7,7 +7,7 @@ version = "0.0.1"
 edition = "2021"
 license = "MIT OR Apache-2.0"
 description = "Placeholder reservation for the ghostto multi-OS browser emulator engine."
-repository = "https://github.com/YOUR_USERNAME/ghostto"
+repository = "https://github.com/ghosttos/ghostto"
 publish = true
 
 [dependencies]
