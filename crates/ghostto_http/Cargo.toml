@@ -1,0 +1,14 @@
+[package]
+name = "ghostto_http"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+repository.workspace = true
+
+[dependencies]
+ghostto_ws = { path = "../ghostto_ws" }
+axum.workspace = true
+tokio.workspace = true
+tower-http.workspace = true
+tracing.workspace = true
