@@ -1,5 +1,5 @@
 //! WebAssembly bindings for ghostto.
-//! Placeholder for v0.1.0 — real engine bindings land here.
+//! Placeholder for v0.0.2 — real engine bindings land here.
 
 use wasm_bindgen::prelude::*;
 
