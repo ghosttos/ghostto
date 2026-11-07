@@ -167,12 +167,12 @@ Cross-Origin-Embedder-Policy: require-corp
 
 ghostto targets wasm32-unknown-unknown natively. The ghostto_web crate exposes an idiomatic JavaScript API through wasm-bindgen:
 
-· Engine — the VM instance
-· Engine.loadKernel(bytes) — load a Linux kernel image
-· Engine.loadInitrd(bytes) — load an initramfs
-· Engine.run() — start execution
-· Engine.pause() / Engine.resume() — control flow
-· Engine.snapshot() — serialize full VM state
+- Engine — the VM instance
+- Engine.loadKernel(bytes) — load a Linux kernel image
+- Engine.loadInitrd(bytes) — load an initramfs
+- Engine.run() — start execution
+- Engine.pause() / Engine.resume() — control flow
+- Engine.snapshot() — serialize full VM state
 
 The engine uses Web Workers for SMP vCPU execution and SharedArrayBuffer for guest RAM, which requires the COOP/COEP headers shown above.
 
