@@ -1,0 +1,4 @@
+[toolchain]
+channel = "stable"
+# Switch to "nightly" when `ghostto_cpu_arm64` starts using `become`
+# for the tail-call interpreter.
