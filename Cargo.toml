@@ -1,23 +1,13 @@
 [workspace]
-resolver = "2"
-members = [
-    ".",
-    "ghostto_web",
-]
-
-[workspace.package]
-version = "0.0.1"
-edition = "2021"
-license = "MIT OR Apache-2.0"
-repository = "https://github.com/YOUR_USERNAME/ghostto"
+exclude = ["ghostto_web"]
 
 [package]
 name = "ghostto"
-version.workspace = true
-edition.workspace = true
-license.workspace = true
-repository.workspace = true
+version = "0.0.1"
+edition = "2021"
+license = "MIT OR Apache-2.0"
 description = "Placeholder reservation for the ghostto multi-OS browser emulator engine."
+repository = "https://github.com/YOUR_USERNAME/ghostto"
 publish = true
 
 [dependencies]
