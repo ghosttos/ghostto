@@ -10,13 +10,26 @@ jobs:
       id-token: write
     steps:
       - uses: actions/checkout@v6
+
       - uses: dtolnay/rust-toolchain@stable
         with:
           targets: wasm32-unknown-unknown
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22.x'
+          registry-url: 'https://registry.npmjs.org'
+
       - name: Install wasm-pack
         run: cargo install wasm-pack
+
       - name: Build wasm package
         run: wasm-pack build ghostto_web --scope ghosttos --target web
+
+      - name: Override package name to @ghosttos/engine
+        run: npm pkg set name="@ghosttos/engine"
+        working-directory: ghostto_web/pkg
+
       - name: Publish to npm
         run: npm publish --access public
         working-directory: ghostto_web/pkg
